@@ -1,0 +1,56 @@
+%MIP
+% number of contracts
+cc = 2;
+% Teamsizes
+sc = [1,5];
+% team number
+nc = [15,6];
+%first team
+fc = [1,16];
+%last team
+lc = [15,21];
+% Length of schedule
+w = 7;
+% number of locations
+m = 3;
+% number of shift types (without breaks)s
+t = 3;
+% shift types of locations
+SL0 = [1,2,3,4];
+% number of forbidden combinations of length 2
+f2 = 3;
+% number of forbidden combinations of length 3
+f3 = 0;
+%required minimal length of blocks of work shifts
+lw = [4,3];
+% permitted maximal length of blocks of work shifts
+uw= [7,7];
+% min number of consecutive days off
+b_min = [2,2];
+%max number of consecutive days off
+b_max = [4,4];
+
+%temporal requirement Matrix
+R = [|13, 13, 13, 13, 13,  1,  1
+     |13, 12, 12, 12, 12,  5,  5
+     |11, 10, 10, 10, 10,  9,  9|];
+
+R0 = [|13, 13, 13, 13, 13,  1,  1
+     |13, 12, 12, 12, 12,  5,  5
+     |11, 10, 10, 10, 10,  9,  9
+     | 8, 10, 10, 10, 10, 30, 30|]; 
+
+% first shifttype of forbidden length 2 combination
+f2_sh1 = [3,3,2];
+%second shifttype of forbidden length 2 combination
+f2_sh2 = [1,2,1];
+% first shifttype of forbidden length 2 combination
+f3_sh1 = [0];
+%second shifttype of forbidden length 2 combination
+f3_sh2 = [0];
+%required minimal length of periods of consecutive shifts of the same type
+ls = [|2,2,2
+      |2,2,2|];
+% permitted maximal length of consecutive shifts of the same type
+us = [|7,6,4
+      |6,5,4|];
